@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Despre Mine - Bunescu Tudor</title>
+  <style>
+    body {
+      background-color: #D6F1FF;
+      font-family: Arial, sans-serif;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #5900ff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #005fa3;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    .poza-colt {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      width: 120px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+
+    .slider-auto {
+      margin-top: 30px;
+      text-align: center;
+      position: relative;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .slider-buttons {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .slider-buttons button {
+      padding: 10px 15px;
+      margin: 0 5px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      background-color: #5900ff;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .slider-buttons button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Poza cu tine în colț -->
+  <img src="img11.jpeg" alt="Eu" class="poza-colt">
+
+  <header>
+    <h1>Bun venit pe site-ul meu!</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Despre Mine</a></li>
+        <li><a href="Viata si munca.html">Viata si munca</a></li>
+        <li><a href="hobbyuri.html">Hobby-uri</a></li>
+        <li><a href="contact.html">Contact</a></li> 
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Despre Mine</h2>
+    <ul>
+      <li>Salut! Numele meu este <strong>Bunescu Tudor</strong>.</li>
+      <li>Născut la data de 14 August 2004</li>
+      <li>Or. Telenești</li>
+      <li>Naționalitate: Moldovean</li>
+      <li>Necăsătorit</li>
+    </ul>
+
+    <h2>Competențe:</h2>
+    <ul>
+      <li>Adaptabilitate</li>
+      <li>Lucru în echipă</li>
+      <li>Comunicabil</li>
+      <li>Perseverență</li>
+      <li>Învățare continuă</li>
+      <li>Responsabilitate</li>
+      <li>Organizare</li>
+    </ul>
+
+    <h2>Limbi cunoscute:</h2>
+    <ul>
+      <li><strong>Limba Română</strong> - Avansat</li>
+      <li><strong>Limba Rusă</strong> - Avansat</li>
+      <li><strong>Limba Franceză</strong> - Mediu</li>
+      <li><strong>Limba Engleză</strong> - Începător</li>
+    </ul>
+
+    <button onclick="showMessage()">Află mai multe despre mine!</button>
+    <p id="dynamicMessage"></p>
+
+    <div class="slider-auto">
+      <img src="img1.jpg" class="slide active" alt="Imagine 1">
+      <img src="img2.jpg" class="slide" alt="Imagine 2">
+      <img src="img3.jpg" class="slide" alt="Imagine 3">
+      <img src="img4.jpg" class="slide" alt="Imagine 4">
+      <img src="img5.jpg" class="slide" alt="Imagine 5">
+      <img src="img6.jpg" class="slide" alt="Imagine 6">
+      <img src="img7.jpg" class="slide" alt="Imagine 7">
+      <img src="img8.jpg" class="slide" alt="Imagine 8">
+      <img src="img9.jpg" class="slide" alt="Imagine 9">
+      <img src="img10.jpg" class="slide" alt="Imagine 10">
+    </div>
+
+    <div class="slider-buttons">
+      <button id="prevBtn">&lt;</button>
+      <button id="nextBtn">&gt;</button>
+    </div>
+  </main>
+
+  <script>
+    function showMessage() {
+      document.getElementById("dynamicMessage").innerText =
+        "Sunt o persoană organizată, serioasă și dornică de dezvoltare personală și profesională. Chiar dacă nu am încă experiență directă în domeniul în care doresc să lucrez, compensez prin responsabilitate, capacitate rapidă de învățare și o atitudine pozitivă față de provocări. Mă implic cu seriozitate în tot ceea ce fac, am răbdare, respect termenele și sunt atent la detalii. Consider că munca în echipă, comunicarea deschisă și adaptabilitatea sunt esențiale pentru succes și mă străduiesc constant să le aplic. Îmi doresc un mediu în care pot crește, învăța de la cei cu experiență și contribui activ la atingerea obiectivelor comune!";
+    }
+
+    // Slider logic
+    const slides = document.querySelectorAll(".slide");
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+      });
+    }
+
+    document.getElementById("nextBtn").addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    });
+
+    document.getElementById("prevBtn").addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(currentIndex);
+    });
+
+    // Auto slider (optional)
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }, 3000); // schimbă imaginea la fiecare 3 secunde
+  </script>
+</body>
+</html>

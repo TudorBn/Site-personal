@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Fundal și stil general */
+    body {
+      background-color: #D6F1FF;
+      font-family: Arial, sans-serif;
+      color: #000000;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #5900ff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #5900ff;
+    }
+
+    /* Formatarare formular */
+    form {
+      max-width: 500px;
+      margin-top: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #5900ff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Poza în colț */
+    .poza-colt {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      width: 120px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Poza în colțul din dreapta sus -->
+  <img src="img11.jpeg" alt="Eu" class="poza-colt">
+
+  <header>
+    <h1>Contactează-mă</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Despre Mine</a></li>
+        <li><a href="Viata si munca.html">Viata si munca</a></li>
+        <li><a href="hobbyuri.html">Hobby-uri</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Date de contact</h2>
+    <p>Email: <strong>tudorbunescu2p3@gmail.com</strong></p>
+    <p>Telefon: <strong>+37369683533</strong></p>
+    <p>Instagram: <a href="https://www.instagram.com/tudor.bunescu/" target="_blank">tudor.bunescu</a></p>
+    <p>Facebook: <a href="https://www.facebook.com/tudor.bunescu.731" target="_blank">Tudor Bunescu</a></p>
+
+    <h2>Trimite un mesaj</h2>
+
+    <!-- Formular de contact -->
+    <form action="https://formspree.io/f/xanbjpqy" method="POST">
+      <label for="email">Emailul tău:</label>
+      <input type="email" name="email" id="email" required>
+
+      <label for="message">Mesajul tău:</label>
+      <textarea id="message" name="message" rows="5" placeholder="Scrie mesajul tău aici..." required></textarea>
+
+      <button type="submit">Trimite</button>
+    </form>
+  </main>
+
+</body>
+</html>
+
